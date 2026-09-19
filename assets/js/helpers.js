@@ -42,7 +42,12 @@ const Helpers = {
       'الأكثر مبيعًا': 'Best sellers', 'الديون': 'Debts', 'المصروفات': 'Expenses', 'تسجيل الدخول بنجاح، جارٍ التحويل...': 'Login successful, redirecting...',
       'وضع البيانات التجريبية مفعّل': 'Demo mode is enabled', 'تعبئة تلقائية': 'Fill demo credentials', 'زيارة المتجر الإلكتروني': 'Visit online store',
       'أدخل بياناتك للوصول إلى لوحة تحكم متجرك': 'Enter your credentials to access your store dashboard', 'دخول': 'Log in', 'تذكرني': 'Remember me',
-      'إدارة منتجات المتجر والمخزون والأسعار': 'Manage store products, inventory, and prices', 'إضافة منتج': 'Add product', 'إضافة عميل': 'Add customer' 
+      'إدارة منتجات المتجر والمخزون والأسعار': 'Manage store products, inventory, and prices', 'إضافة منتج': 'Add product', 'إضافة عميل': 'Add customer',
+      'البريد الإلكتروني أو رقم الهاتف': 'Email or phone number', 'كلمة المرور': 'Password', 'شعار ShopFlow': 'ShopFlow logo',
+      'نظام إدارة المحلات — منتجات، عملاء، مبيعات، ومخزون في مكان واحد': 'Store management — products, customers, sales, and inventory in one place',
+      'الـ API غير متاح حاليًا': 'API is currently unavailable', 'بيانات الدخول': 'Login credentials', 'ليس لديك حساب؟': "Don't have an account?",
+      'تمت تعبئة بيانات الدخول التجريبية': 'Demo credentials filled', 'جارٍ تسجيل الدخول...': 'Logging in...', 'جارٍ التحويل...': 'Redirecting...',
+      'متجر الأفق': 'Horizon Store', 'صاحب المحل': 'Store owner', 'المتجر': 'Store', 'المستخدم': 'User' 
     },
     t(value) {
       const text = String(value ?? '');

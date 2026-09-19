@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>المشتريات | ShopFlow</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="app-body" data-page="purchases">
+
+  <div id="app-shell">
+    <main class="app-content" id="app-content">
+
+      <div class="page-header">
+        <div>
+          <div id="sf-breadcrumb"></div>
+          <h1 class="page-title">المشتريات</h1>
+          <p class="page-subtitle">فواتير الشراء من الموردين — تُحدِّث المخزون تلقائيًا</p>
+        </div>
+        <div class="page-actions">
+          <button class="btn btn-primary" type="button" id="btn-add-purchase">
+            <i class="bi bi-bag-plus me-1"></i>فاتورة شراء جديدة
+          </button>
+        </div>
+      </div>
+
+      <div class="card table-card">
+        <div class="table-toolbar">
+          <div class="toolbar-search">
+            <i class="bi bi-search"></i>
+            <input type="text" class="form-control" id="purchases-search" placeholder="ابحث برقم الفاتورة أو اسم المورد...">
+          </div>
+          <input type="date" class="form-control" id="purchases-from" title="من تاريخ" aria-label="من تاريخ" style="max-width:160px">
+          <input type="date" class="form-control" id="purchases-to" title="إلى تاريخ" aria-label="إلى تاريخ" style="max-width:160px">
+        </div>
+
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>رقم الفاتورة</th>
+                <th class="d-none d-md-table-cell">المورد</th>
+                <th class="d-none d-lg-table-cell">التاريخ</th>
+                <th>الإجمالي</th>
+                <th class="d-none d-sm-table-cell">المدفوع</th>
+                <th>المتبقي</th>
+                <th class="cell-actions">إجراءات</th>
+              </tr>
+            </thead>
+            <tbody id="purchases-body"></tbody>
+          </table>
+        </div>
+
+        <div class="sf-pagination" id="purchases-pagination"></div>
+      </div>
+
+      <!-- نافذة فاتورة شراء جديدة -->
+      <div class="modal fade" id="purchase-modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <form id="purchase-form" novalidate>
+              <div class="modal-header">
+                <h5 class="modal-title"><i class="bi bi-bag-plus me-1 text-primary"></i>فاتورة شراء جديدة</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+              </div>
+              <div class="modal-body">
+                <div class="row g-3 mb-3">
+                  <div class="col-md-5">
+                    <label class="form-label" for="purchase-supplier">المورد <span class="text-danger">*</span></label>
+                    <select class="form-select" id="purchase-supplier" data-validate="required">
+                      <option value="">اختر المورد...</option>
+                    </select>
+                  </div>
+                  <div class="col-md-3">
+                    <label class="form-label" for="purchase-date">التاريخ</label>
+                    <input type="date" class="form-control" id="purchase-date">
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label" for="purchase-notes">ملاحظات</label>
+                    <input type="text" class="form-control" id="purchase-notes" placeholder="ملاحظة اختيارية">
+                  </div>
+                </div>
+
+                <div class="card bg-light border">
+                  <div class="card-header bg-transparent border-0 pt-3 pb-0">
+                    <span class="fw-bold small"><i class="bi bi-boxes me-1"></i>أصناف الفاتورة</span>
+                  </div>
+                  <div class="card-body">
+                    <div id="purchase-items"></div>
+                    <button class="btn btn-soft-primary btn-sm" type="button" id="purchase-add-item">
+                      <i class="bi bi-plus-lg me-1"></i>إضافة صنف
+                    </button>
+                  </div>
+                </div>
+
+                <div class="row g-3 mt-2">
+                  <div class="col-md-4">
+                    <label class="form-label">الإجمالي</label>
+                    <div class="form-control bg-light fw-bold" id="purchase-total-display">0.00</div>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label" for="purchase-paid">المدفوع</label>
+                    <input type="number" class="form-control" id="purchase-paid" min="0" step="0.01" value="0">
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label">المتبقي</label>
+                    <div class="form-control bg-light fw-bold text-danger" id="purchase-remaining-display">0.00</div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-soft-secondary" data-bs-dismiss="modal">إلغاء</button>
+                <button type="submit" class="btn btn-primary" id="purchase-save-btn"><i class="bi bi-check-lg me-1"></i>حفظ فاتورة الشراء</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/helpers.js"></script>
+  <script src="assets/js/demo-data.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/purchases.js"></script>
+</body>
+</html>

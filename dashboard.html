@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة التحكم | ShopFlow</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="app-body" data-page="dashboard">
+
+  <div id="app-shell">
+    <main class="app-content" id="app-content">
+
+      <div class="page-header no-print">
+        <div>
+          <div id="sf-breadcrumb"></div>
+          <h1 class="page-title">لوحة التحكم</h1>
+          <p class="page-subtitle">نظرة عامة على أداء متجرك <span id="dashboard-updated"></span></p>
+        </div>
+        <div class="page-actions">
+          <button class="btn btn-soft-secondary" type="button" id="dashboard-refresh" title="تحديث البيانات">
+            <i class="bi bi-arrow-clockwise"></i><span class="d-none d-sm-inline"> تحديث</span>
+          </button>
+          <a class="btn btn-soft-primary" href="product-form.html"><i class="bi bi-plus-lg me-1"></i>إضافة منتج</a>
+          <a class="btn btn-soft-primary" href="customers.html"><i class="bi bi-person-plus me-1"></i>إضافة عميل</a>
+          <a class="btn btn-primary" href="create-sale.html"><i class="bi bi-receipt-cutoff me-1"></i>فاتورة جديدة</a>
+        </div>
+      </div>
+
+      <!-- بطاقات الإحصائيات -->
+      <div class="row g-3 mb-4" id="stat-cards"></div>
+
+      <div class="row g-3 mb-4">
+        <!-- الرسم البياني للمبيعات -->
+        <div class="col-xl-8">
+          <div class="card h-100">
+            <div class="card-header">
+              <span><i class="bi bi-bar-chart-line"></i>مبيعات آخر 14 يومًا</span>
+              <span class="badge badge-soft-primary" id="chart-total-badge">—</span>
+            </div>
+            <div class="card-body">
+              <div class="chart-box"><canvas id="sales-chart"></canvas></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- المنتجات منخفضة المخزون -->
+        <div class="col-xl-4">
+          <div class="card h-100">
+            <div class="card-header">
+              <span><i class="bi bi-exclamation-triangle text-warning"></i>منتجات منخفضة المخزون</span>
+              <a class="small fw-bold" href="products.html?stock=low">عرض الكل</a>
+            </div>
+            <div class="card-body p-0" id="low-stock-box">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>المنتج</th>
+                      <th>الكمية</th>
+                      <th>الحد الأدنى</th>
+                    </tr>
+                  </thead>
+                  <tbody id="low-stock-body"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- آخر الفواتير -->
+      <div class="card table-card">
+        <div class="card-header">
+          <span><i class="bi bi-receipt"></i>آخر الفواتير</span>
+          <a class="small fw-bold" href="sales.html">عرض كل الفواتير</a>
+        </div>
+        <div class="card-body p-0" id="latest-invoices-box">
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>رقم الفاتورة</th>
+                  <th class="d-none d-md-table-cell">العميل</th>
+                  <th>الإجمالي</th>
+                  <th class="d-none d-lg-table-cell">المدفوع</th>
+                  <th class="d-none d-lg-table-cell">المتبقي</th>
+                  <th class="d-none d-md-table-cell">الحالة</th>
+                  <th class="d-none d-sm-table-cell">التاريخ</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="latest-invoices-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <script src="assets/js/helpers.js"></script>
+  <script src="assets/js/demo-data.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

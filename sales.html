@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>المبيعات والفواتير | ShopFlow</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="app-body" data-page="sales">
+
+  <div id="app-shell">
+    <main class="app-content" id="app-content">
+
+      <div class="page-header">
+        <div>
+          <div id="sf-breadcrumb"></div>
+          <h1 class="page-title">المبيعات والفواتير</h1>
+          <p class="page-subtitle">كل فواتير البيع مع البحث والتصفية بالتاريخ والحالة</p>
+        </div>
+        <div class="page-actions">
+          <a class="btn btn-primary" href="create-sale.html"><i class="bi bi-plus-lg me-1"></i>فاتورة جديدة</a>
+        </div>
+      </div>
+
+      <div class="card table-card">
+        <div class="table-toolbar">
+          <div class="toolbar-search">
+            <i class="bi bi-search"></i>
+            <input type="text" class="form-control" id="sales-search" placeholder="ابحث برقم الفاتورة أو اسم العميل...">
+          </div>
+          <input type="date" class="form-control" id="sales-from" title="من تاريخ" aria-label="من تاريخ" style="max-width:160px">
+          <input type="date" class="form-control" id="sales-to" title="إلى تاريخ" aria-label="إلى تاريخ" style="max-width:160px">
+          <select class="form-select" id="sales-status" aria-label="فلتر الحالة" style="max-width:170px">
+            <option value="">كل الحالات</option>
+            <option value="paid">مدفوعة</option>
+            <option value="partial">مدفوعة جزئيًا</option>
+            <option value="unpaid">غير مدفوعة</option>
+            <option value="cancelled">ملغاة</option>
+          </select>
+        </div>
+
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>رقم الفاتورة</th>
+                <th class="d-none d-md-table-cell">العميل</th>
+                <th class="d-none d-lg-table-cell">التاريخ</th>
+                <th>الإجمالي</th>
+                <th class="d-none d-sm-table-cell">المدفوع</th>
+                <th>المتبقي</th>
+                <th class="d-none d-lg-table-cell">طريقة الدفع</th>
+                <th class="d-none d-md-table-cell">الحالة</th>
+                <th class="cell-actions">إجراءات</th>
+              </tr>
+            </thead>
+            <tbody id="sales-body"></tbody>
+          </table>
+        </div>
+
+        <div class="sf-pagination" id="sales-pagination"></div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/helpers.js"></script>
+  <script src="assets/js/demo-data.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/sales.js"></script>
+</body>
+</html>

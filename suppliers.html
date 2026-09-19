@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الموردون | ShopFlow</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="app-body" data-page="suppliers">
+
+  <div id="app-shell">
+    <main class="app-content" id="app-content">
+
+      <div class="page-header">
+        <div>
+          <div id="sf-breadcrumb"></div>
+          <h1 class="page-title">الموردون</h1>
+          <p class="page-subtitle">إدارة الموردين ومتابعة فواتير الشراء والديون</p>
+        </div>
+        <div class="page-actions">
+          <a class="btn btn-primary" href="purchases.html"><i class="bi bi-bag-plus me-1"></i>فاتورة شراء جديدة</a>
+          <button class="btn btn-soft-primary" type="button" id="btn-add-supplier">
+            <i class="bi bi-plus-lg me-1"></i>إضافة مورد
+          </button>
+        </div>
+      </div>
+
+      <div class="card table-card">
+        <div class="table-toolbar">
+          <div class="toolbar-search">
+            <i class="bi bi-search"></i>
+            <input type="text" class="form-control" id="suppliers-search" placeholder="ابحث بالاسم أو رقم الهاتف...">
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>المورد</th>
+                <th class="d-none d-md-table-cell">الهاتف</th>
+                <th>إجمالي المشتريات</th>
+                <th class="d-none d-sm-table-cell">المدفوع</th>
+                <th>المتبقي (عليك)</th>
+                <th class="cell-actions">إجراءات</th>
+              </tr>
+            </thead>
+            <tbody id="suppliers-body"></tbody>
+          </table>
+        </div>
+
+        <div class="sf-pagination" id="suppliers-pagination"></div>
+      </div>
+
+      <!-- نافذة إضافة/تعديل مورد -->
+      <div class="modal fade" id="supplier-modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <form id="supplier-form" novalidate>
+              <div class="modal-header">
+                <h5 class="modal-title" id="supplier-modal-title"><i class="bi bi-truck me-1 text-primary"></i>إضافة مورد</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+              </div>
+              <div class="modal-body">
+                <input type="hidden" id="supplier-id">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label" for="supplier-name">اسم المورد / الشركة <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="supplier-name" name="name" placeholder="مثال: شركة النور للتوريدات"
+                           data-validate="required|min:2">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="supplier-phone">رقم الهاتف <span class="text-danger">*</span></label>
+                    <input type="tel" class="form-control input-ltr" id="supplier-phone" name="phone" placeholder="01xxxxxxxxx"
+                           data-validate="required|phone">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="supplier-company">جهة الاتصال</label>
+                    <input type="text" class="form-control" id="supplier-company" name="company" placeholder="اسم مسؤول التواصل">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="supplier-email">البريد الإلكتروني</label>
+                    <input type="email" class="form-control input-ltr" id="supplier-email" name="email" placeholder="sales@example.com"
+                           data-validate="email">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="supplier-address">العنوان</label>
+                    <input type="text" class="form-control" id="supplier-address" name="address" placeholder="المدينة - المنطقة الصناعية">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="supplier-notes">ملاحظات</label>
+                    <input type="text" class="form-control" id="supplier-notes" name="notes" placeholder="مثال: دفع آجل 30 يوم">
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-soft-secondary" data-bs-dismiss="modal">إلغاء</button>
+                <button type="submit" class="btn btn-primary" id="supplier-save-btn">حفظ المورد</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- نافذة تسجيل دفعة لمورد -->
+      <div class="modal fade" id="supplier-payment-modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <form id="supplier-payment-form" novalidate>
+              <div class="modal-header">
+                <h5 class="modal-title"><i class="bi bi-cash-coin me-1 text-success"></i>تسجيل دفعة لمورد</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+              </div>
+              <div class="modal-body">
+                <p class="mb-3">المورد: <strong id="sp-name"></strong>
+                  <span class="badge badge-soft-danger ms-2" id="sp-debt"></span></p>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label" for="sp-amount">المبلغ <span class="text-danger">*</span></label>
+                    <input type="number" class="form-control" id="sp-amount" name="amount" min="0" step="0.01"
+                           placeholder="0.00" data-validate="required|number|minValue:0.01">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="sp-method">طريقة الدفع</label>
+                    <select class="form-select" id="sp-method" name="method">
+                      <option value="cash">نقدي</option>
+                      <option value="card">بطاقة</option>
+                      <option value="transfer">تحويل بنكي</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label" for="sp-notes">ملاحظات</label>
+                    <input type="text" class="form-control" id="sp-notes" name="notes" placeholder="ملاحظة اختيارية">
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-soft-secondary" data-bs-dismiss="modal">إلغاء</button>
+                <button type="submit" class="btn btn-success" id="sp-save-btn"><i class="bi bi-check-lg me-1"></i>تسجيل الدفعة</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/helpers.js"></script>
+  <script src="assets/js/demo-data.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/customers.js"></script>
+</body>
+</html>

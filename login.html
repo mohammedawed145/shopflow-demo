@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تسجيل الدخول | ShopFlow</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="auth-body" data-page="login">
+
+  <div class="auth-wrapper">
+    <div class="auth-brand">
+      <div class="auth-logo"><img src="assets/images/logo.svg" alt="شعار ShopFlow"></div>
+      <h1 class="auth-name">ShopFlow</h1>
+      <p class="auth-tagline">نظام إدارة المحلات — منتجات، عملاء، مبيعات، ومخزون في مكان واحد</p>
+    </div>
+
+    <div class="auth-card">
+      <h2 class="auth-card-title">تسجيل الدخول</h2>
+      <p class="auth-card-sub">أدخل بياناتك للوصول إلى لوحة تحكم متجرك</p>
+
+      <form id="login-form" novalidate>
+        <div class="mb-3">
+          <label class="form-label" for="login-identifier">البريد الإلكتروني أو رقم الهاتف</label>
+          <div class="position-relative">
+            <input type="text" class="form-control input-ltr" id="login-identifier" name="identifier"
+                   placeholder="demo@shopflow.com" data-validate="required" autocomplete="username">
+          </div>
+        </div>
+
+        <div class="mb-2">
+          <label class="form-label" for="login-password">كلمة المرور</label>
+          <div class="position-relative">
+            <input type="password" class="form-control" id="login-password" name="password"
+                   placeholder="••••••••" data-validate="required" autocomplete="current-password">
+            <button type="button" class="password-toggle" data-toggle-password="login-password" aria-label="إظهار كلمة المرور">
+              <i class="bi bi-eye"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="login-remember">
+            <label class="form-check-label small" for="login-remember">تذكرني</label>
+          </div>
+          <a href="forgot-password.html" class="small fw-bold text-decoration-none">نسيت كلمة المرور؟</a>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 btn-lg" id="login-submit">
+          <i class="bi bi-box-arrow-in-left me-1"></i>دخول
+        </button>
+      </form>
+
+      <div class="auth-demo-hint d-none" id="demo-hint">
+        <div class="d-flex align-items-start gap-2">
+          <i class="bi bi-info-circle mt-1"></i>
+          <div>
+            <strong>وضع البيانات التجريبية مفعّل</strong> (الـ API غير متاح حاليًا)
+            <div class="mt-1">بيانات الدخول: <span class="demo-creds">demo@shopflow.com</span> / كلمة المرور: <span class="demo-creds">123456</span></div>
+            <button type="button" class="btn btn-sm btn-primary mt-2" id="fill-demo">
+              <i class="bi bi-magic me-1"></i>تعبئة تلقائية
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="auth-footer-links">
+        ليس لديك حساب؟ <a href="register.html">إنشاء حساب جديد</a>
+      </div>
+    </div>
+
+    <div class="auth-footer-links mt-3">
+      <a href="store.html"><i class="bi bi-shop-window me-1"></i>زيارة المتجر الإلكتروني</a>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/helpers.js"></script>
+  <script src="assets/js/demo-data.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/components.js"></script>
+</body>
+</html>

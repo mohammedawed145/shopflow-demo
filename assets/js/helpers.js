@@ -11,7 +11,7 @@ const Helpers = {
      ============================================================ */
   I18n: {
     key: 'shopflow_language',
-    lang: localStorage.getItem('shopflow_language') || 'ar',
+    lang: localStorage.getItem('shopflow_language') || 'en',
     dict: {
       'العربية': 'English', 'الإنجليزية': 'العربية', 'لوحة التحكم': 'Dashboard',
       'المنتجات': 'Products', 'التصنيفات': 'Categories', 'العملاء': 'Customers',
@@ -30,7 +30,19 @@ const Helpers = {
       'إضافة للسلة': 'Add to cart', 'أضف': 'Add', 'متابعة التسوق': 'Continue shopping',
       'إتمام الطلب': 'Checkout', 'تأكيد الطلب': 'Confirm order', 'طباعة / PDF': 'Print / PDF',
       'لا توجد بيانات': 'No data available', 'لا توجد منتجات': 'No products found',
-      'تحديث': 'Refresh', 'بحث عن منتج...': 'Search for a product...', 'ابحث عن منتج...': 'Search for a product...'
+      'تحديث': 'Refresh', 'بحث عن منتج...': 'Search for a product...', 'ابحث عن منتج...': 'Search for a product...',
+      'نظام إدارة المحلات': 'Store Management System', 'منتجات، عملاء، مبيعات، ومخزون في مكان واحد': 'Products, customers, sales, and inventory in one place',
+      'نظرة عامة على أداء متجرك': 'Overview of your store performance', 'منتجات منخفضة المخزون': 'Low-stock products', 'آخر الفواتير': 'Recent invoices',
+      'إجمالي': 'Total', 'مبيعات اليوم': "Today's sales", 'مبيعات الشهر': "This month's sales", 'صافي الأرباح هذا الشهر': "Net profit this month",
+      'عدد المنتجات': 'Products count', 'ديون العملاء (لك)': 'Customer receivables', 'ديون الموردين (عليك)': 'Supplier payables',
+      'كل التصنيفات': 'All categories', 'كل حالات المخزون': 'All stock statuses', 'متوفر': 'In stock', 'منخفض': 'Low stock', 'نفد المخزون': 'Out of stock',
+      'رقم الفاتورة': 'Invoice number', 'العميل': 'Customer', 'سعر الشراء': 'Cost price', 'سعر البيع': 'Selling price',
+      'إجراءات': 'Actions', 'مبيعات آخر 14 يومًا': 'Sales in the last 14 days', 'تطبيق الفلاتر': 'Apply filters',
+      'تصدير CSV (Excel)': 'Export CSV (Excel)', 'المبيعات': 'Sales', 'الأرباح': 'Profit', 'المخزون': 'Inventory',
+      'الأكثر مبيعًا': 'Best sellers', 'الديون': 'Debts', 'المصروفات': 'Expenses', 'تسجيل الدخول بنجاح، جارٍ التحويل...': 'Login successful, redirecting...',
+      'وضع البيانات التجريبية مفعّل': 'Demo mode is enabled', 'تعبئة تلقائية': 'Fill demo credentials', 'زيارة المتجر الإلكتروني': 'Visit online store',
+      'أدخل بياناتك للوصول إلى لوحة تحكم متجرك': 'Enter your credentials to access your store dashboard', 'دخول': 'Log in', 'تذكرني': 'Remember me',
+      'إدارة منتجات المتجر والمخزون والأسعار': 'Manage store products, inventory, and prices', 'إضافة منتج': 'Add product', 'إضافة عميل': 'Add customer' 
     },
     t(value) {
       const text = String(value ?? '');

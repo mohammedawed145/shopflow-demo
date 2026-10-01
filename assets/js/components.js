@@ -566,6 +566,7 @@ const Components = {
     const settings = Helpers.getSettings();
     const user = Auth.getUser();
     const storeName = (user && user.store && user.store.name) || settings.store_name || 'متجر ShopFlow';
+    const displayStoreName = Helpers.I18n.t(storeName);
     const esc = (v) => Helpers.escapeHtml(v);
 
     const shell = document.getElementById('store-shell');
@@ -575,8 +576,8 @@ const Components = {
       <header class="store-header">
         <div class="container-xl d-flex align-items-center gap-3 py-2 flex-wrap">
           <a class="store-brand" href="store.html">
-            <img src="assets/images/logo.svg" alt="شعار ${esc(storeName)}">
-            <span class="store-name">${esc(storeName)}</span>
+            <img src="assets/images/logo.svg" alt="شعار ${esc(displayStoreName)}">
+            <span class="store-name">${esc(displayStoreName)}</span>
           </a>
           ${withSearch ? `
             <div class="store-search input-group">
@@ -602,7 +603,7 @@ const Components = {
       : 'يعمل بنظام ShopFlow لإدارة المحلات';
     shell.insertAdjacentHTML('beforeend', `
       <footer class="store-footer">
-        © 2026 ${esc(storeName)} · ${storeFooter}
+        © 2026 ${esc(displayStoreName)} · ${storeFooter}
       </footer>
     `);
     document.querySelector('.standalone-lang-switcher')?.remove();

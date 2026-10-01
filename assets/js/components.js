@@ -597,9 +597,12 @@ const Components = {
       </header>
     `);
 
+    const storeFooter = Helpers.I18n.lang === 'en'
+      ? 'Powered by ShopFlow store management'
+      : 'يعمل بنظام ShopFlow لإدارة المحلات';
     shell.insertAdjacentHTML('beforeend', `
       <footer class="store-footer">
-        © 2026 ${esc(storeName)} · يعمل بنظام ShopFlow لإدارة المحلات
+        © 2026 ${esc(storeName)} · ${storeFooter}
       </footer>
     `);
     document.querySelector('.standalone-lang-switcher')?.remove();

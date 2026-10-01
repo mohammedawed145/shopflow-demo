@@ -161,7 +161,7 @@ const StorePage = {
 
     const box = document.getElementById('store-chips');
     box.innerHTML = `
-      <button type="button" class="chip ${this.state.category_id === '' ? 'active' : ''}" data-cat="">الكل</button>
+      <button type="button" class="chip ${this.state.category_id === '' ? 'active' : ''}" data-cat="">${Helpers.I18n.t('الكل')}</button>
       ${this.state.categories.map(([id, name]) => `
         <button type="button" class="chip ${this.state.category_id === id ? 'active' : ''}" data-cat="${Helpers.escapeHtml(id)}">
           ${Helpers.escapeHtml(name)}
@@ -199,7 +199,7 @@ const StorePage = {
                 <i class="bi bi-cart-plus me-1"></i>أضف
               </button>
             </div>
-            ${p.quantity <= 5 ? `<div class="product-category mt-1"><i class="bi bi-exclamation-triangle text-warning me-1"></i>المتوفر: ${Helpers.formatNumber(p.quantity)}</div>` : ''}
+            ${p.quantity <= 5 ? `<div class="product-category mt-1"><i class="bi bi-exclamation-triangle text-warning me-1"></i>${Helpers.I18n.t('المتوفر')}: ${Helpers.formatNumber(p.quantity)}</div>` : ''}
           </div>
         </div>
       </div>`;

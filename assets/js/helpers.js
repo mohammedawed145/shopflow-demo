@@ -47,7 +47,18 @@ const Helpers = {
       'نظام إدارة المحلات — منتجات، عملاء، مبيعات، ومخزون في مكان واحد': 'Store management — products, customers, sales, and inventory in one place',
       'الـ API غير متاح حاليًا': 'API is currently unavailable', 'بيانات الدخول': 'Login credentials', 'ليس لديك حساب؟': "Don't have an account?",
       'تمت تعبئة بيانات الدخول التجريبية': 'Demo credentials filled', 'جارٍ تسجيل الدخول...': 'Logging in...', 'جارٍ التحويل...': 'Redirecting...',
-      'متجر الأفق': 'Horizon Store', 'صاحب المحل': 'Store owner', 'المتجر': 'Store', 'المستخدم': 'User' 
+      'متجر الأفق': 'Horizon Store', 'صاحب المحل': 'Store owner', 'المتجر': 'Store', 'المستخدم': 'User',
+      'إلكترونيات': 'Electronics', 'ملابس وأحذية': 'Clothing & Shoes', 'مواد غذائية': 'Groceries', 'أدوات منزلية': 'Homeware', 'مستلزمات مكتبية': 'Office Supplies',
+      'أجهزة وملحقات إلكترونية': 'Devices and electronic accessories', 'أزياء رجالية ونسائية': 'Men and women fashion', 'سلع غذائية أساسية': 'Everyday grocery essentials', 'أدوات ومستلزمات المنزل': 'Home tools and essentials', 'قرطاسية ومستلزمات المكاتب': 'Stationery and office essentials',
+      'شاحن سريع 20 واط': '20W Fast Charger', 'سماعة بلوتوث Pro': 'Bluetooth Headphones Pro', 'ماوس لاسلكي': 'Wireless Mouse', 'لوحة مفاتيح ميكانيكية': 'Mechanical Keyboard', 'قميص قطن رجالي': 'Men’s Cotton Shirt', 'بنطال جينز كلاسيك': 'Classic Denim Jeans', 'حذاء رياضي جري': 'Running Sneakers', 'حقيبة ظهر مقاومة للماء': 'Waterproof Backpack', 'كوب حراري ستانلس': 'Stainless Thermal Mug', 'طقم أواني تيفال 5 قطع': '5-Piece Non-stick Cookware Set', 'زيت زيتون بكر 1 لتر': 'Extra Virgin Olive Oil 1L', 'عسل جبلي طبيعي': 'Natural Mountain Honey', 'دفتر ملاحظات جلد': 'Leather Notebook',
+      'شاحن Type-C بقوة 20 واط مع كابل مضفر': '20W Type-C charger with braided cable', 'سماعة لاسلكية بعزل ضوضاء نشط': 'Wireless headphones with active noise cancellation', 'ماوس صامت بثلاث سرعات وDPI عالي': 'Silent mouse with three speeds and high DPI', 'لوحة مفاتيح ميكانيكية بإضاءة RGB': 'Mechanical keyboard with RGB lighting', 'قميص قطن صيفي بقصة عصرية': 'Lightweight cotton shirt with a modern cut', 'بنطال جينز بقصة مستقيمة': 'Straight-fit denim jeans', 'حذاء رياضي خفيف مخصص للجري': 'Lightweight running shoes', 'حقيبة ظهر بجيب مخصص للابتوب': 'Backpack with a dedicated laptop sleeve', 'كوب يحافظ على الحرارة 8 ساعات': 'Mug that keeps drinks hot for 8 hours', 'طقم قدور تيفال بطبقة مانعة للالتصاق': 'Non-stick cookware set', 'زيت زيتون بكر ممتاز معصور على البارد': 'Premium cold-pressed extra virgin olive oil', 'عسل جبلي طبيعي 100% بدون إضافات': '100% natural mountain honey with no additives', 'دفتر جلد بغلاف مطبوع و192 صفحة': 'Leather notebook with printed cover and 192 pages',
+      'أحمد محمد السالم': 'Ahmed Al-Salem', 'فاطمة علي': 'Fatima Ali', 'محمد السيد': 'Mohamed El-Sayed', 'سارة خالد': 'Sarah Khaled', 'خالد عبدالله': 'Khaled Abdullah', 'نور الهدى حسن': 'Noor Al-Huda Hassan', 'محمود حسن': 'Mahmoud Hassan', 'ليلى إبراهيم': 'Laila Ibrahim', 'عميل نقدي': 'Cash customer',
+      'شركة النور للتوريدات': 'Al Noor Supplies Co.', 'مؤسسة الأفق التجارية': 'Horizon Trading Est.', 'شركة البركة للإلكترونيات': 'Al Baraka Electronics Co.', 'مكتبة المستقبل للتوريد': 'Future Library Supplies',
+      'مخزون منخفض': 'Low stock', 'نفاد مخزون': 'Out of stock', 'فاتورة جديدة': 'New invoice', 'دفعة مستلمة': 'Payment received', 'عميل دائم': 'Regular customer', 'يفضل الدفع نقدًا': 'Prefers cash payment', 'قبل قليل': 'Just now', 'دقيقة': 'minute', 'دقائق': 'minutes', 'ساعة': 'hour', 'ساعات': 'hours', 'يوم': 'day', 'أيام': 'days',
+      'تذكرني': 'Remember me', 'التالي': 'Next', 'السابق': 'Previous', 'تأكيد': 'Confirm', 'تأكيد الإجراء': 'Confirm action', 'إلغاء': 'Cancel', 'عربي': 'Arabic', 'مدير': 'Admin', 'موظف': 'Staff', 'مستخدم': 'User',
+      'تم تسجيل الدخول بنجاح، جارٍ التحويل...': 'Login successful, redirecting...', 'فشل تسجيل الدخول، تحقق من البيانات': 'Login failed, check your credentials', 'جارٍ تسجيل الدخول...': 'Logging in...', 'جارٍ إنشاء الحساب...': 'Creating account...', 'جارٍ الإرسال...': 'Sending...', 'جارٍ التنفيذ...': 'Processing...', 'تم تسجيل الخروج بنجاح': 'Logged out successfully', 'انتهت الجلسة، يرجى تسجيل الدخول من جديد': 'Your session expired. Please log in again', 'تمت تعبئة بيانات الدخول التجريبية': 'Demo credentials filled', 'تم إنشاء الحساب بنجاح، سجّل الدخول الآن': 'Account created successfully. Log in now', 'تم إنشاء الحساب بنجاح، جارٍ التحويل لصفحة الدخول...': 'Account created successfully. Redirecting to login...',
+      'سلة المشتريات': 'Shopping cart', 'إفراغ السلة': 'Clear cart', 'حذف من السلة': 'Remove from cart', 'سلة المشتريات فارغة': 'Your shopping cart is empty', 'لم تقم بإضافة أي منتجات بعد': 'You have not added any products yet', 'نعم، إفراغ السلة': 'Yes, clear cart', 'تم حذف المنتج من السلة': 'Product removed from cart', 'لا توجد منتجات مطابقة': 'No matching products', 'جرّب كلمة بحث أخرى أو تصنيفًا مختلفًا': 'Try another search term or category', 'هذا المنتج غير متوفر حاليًا': 'This product is currently unavailable', 'تعذر جلب منتجات المتجر': 'Could not load store products', 'تعذر إرسال الطلب، حاول مرة أخرى': 'Could not submit the order. Try again', 'لا يمكن إتمام الطلب': 'Checkout cannot be completed', 'جارٍ إرسال الطلب...': 'Submitting order...', 'سنتواصل معك قريبًا لتأكيد الطلب': 'We will contact you soon to confirm the order', 'تصنيف': 'Category',
+      'العنوان مطلوب عند اختيار التوصيل': 'Address is required for delivery', 'قائمة المستخدم': 'User menu', 'فتح القائمة الجانبية': 'Open sidebar', 'مسار التنقل': 'Breadcrumb', 'تعذر الوصول إلى الـ API — تم التحويل تلقائيًا إلى وضع البيانات التجريبية': 'API unavailable — switched to demo mode automatically', 'حدث خطأ أثناء تحميل البيانات': 'An error occurred while loading data', 'لا توجد بيانات': 'No data available', 'العملة الحالية بالبيانات التجريبية — اضغط للإعدادات': 'Current demo currency — open settings to change it'
     },
     t(value) {
       const text = String(value ?? '');
@@ -114,6 +125,7 @@ const Helpers = {
 
   getCurrency() {
     const settings = this.getSettings();
+    if (this.I18n.lang === 'en' && (!settings.currency || settings.currency === 'ر.س')) return 'SAR';
     return settings.currency || 'ر.س';
   },
 
@@ -358,6 +370,13 @@ document.addEventListener('change', (e) => {
 
 document.addEventListener('DOMContentLoaded', () => {
   Helpers.I18n.set(Helpers.I18n.lang);
+  const observer = new MutationObserver((records) => {
+    if (Helpers.I18n.lang !== 'en') return;
+    records.forEach((record) => record.addedNodes.forEach((node) => {
+      if (node.nodeType === Node.ELEMENT_NODE) Helpers.I18n.translate(node);
+    }));
+  });
+  observer.observe(document.body, { childList: true, subtree: true });
 });
 
 window.Helpers = Helpers;

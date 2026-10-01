@@ -178,6 +178,9 @@ const StorePage = {
 
   productCard(p) {
     const esc = Helpers.escapeHtml;
+    const name = Helpers.I18n.t(p.name);
+    const category = Helpers.I18n.t(p.category_name || '');
+    const description = Helpers.I18n.t(p.description || '');
     return `
       <div class="col">
         <div class="product-card">
@@ -187,9 +190,9 @@ const StorePage = {
               : '<i class="bi bi-image"></i>'}
           </div>
           <div class="product-body">
-            <h3 class="product-name">${esc(p.name)}</h3>
-            <div class="product-category">${esc(p.category_name || '')}</div>
-            ${p.description ? `<p class="product-desc">${esc(p.description)}</p>` : ''}
+              <h3 class="product-name">${esc(name)}</h3>
+            <div class="product-category">${esc(category)}</div>
+            ${p.description ? `<p class="product-desc">${esc(description)}</p>` : ''}
             <div class="d-flex align-items-center justify-content-between mt-auto pt-2">
               <span class="product-price">${Helpers.formatCurrency(p.price)}</span>
               <button type="button" class="btn btn-primary btn-sm" data-add="${esc(p.id)}">

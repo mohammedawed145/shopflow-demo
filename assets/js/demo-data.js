@@ -16,7 +16,7 @@ function mulberry32(seed) {
 }
 
 const DemoData = (() => {
-  const DB_KEY = 'shopflow_demo_db_v1';
+  const DB_KEY = 'shopflow_demo_db_v2';
   let db = null;
 
   function seed() {
@@ -48,19 +48,19 @@ const DemoData = (() => {
         { id: 5, name: 'مستلزمات مكتبية', description: 'قرطاسية ومستلزمات المكاتب' }
       ],
       products: [
-        { id: 1, name: 'شاحن سريع 20 واط', sku: 'SKU-1001', category_id: 1, description: 'شاحن Type-C بقوة 20 واط مع كابل مضفر', image: null, cost: 25, price: 45, quantity: 34, min_stock: 5, color: 'أبيض', size: '', material: '' },
-        { id: 2, name: 'سماعة بلوتوث Pro', sku: 'SKU-1002', category_id: 1, description: 'سماعة لاسلكية بعزل ضوضاء نشط', image: null, cost: 85, price: 149, quantity: 4, min_stock: 5, color: 'أسود', size: '', material: '' },
-        { id: 3, name: 'ماوس لاسلكي', sku: 'SKU-1003', category_id: 1, description: 'ماوس صامت بثلاث سرعات وDPI عالي', image: null, cost: 30, price: 59, quantity: 22, min_stock: 6, color: 'رمادي', size: '', material: '' },
-        { id: 4, name: 'لوحة مفاتيح ميكانيكية', sku: 'SKU-1004', category_id: 1, description: 'لوحة مفاتيح ميكانيكية بإضاءة RGB', image: null, cost: 140, price: 249, quantity: 8, min_stock: 3, color: 'أسود', size: '', material: '' },
-        { id: 5, name: 'قميص قطن رجالي', sku: 'SKU-1005', category_id: 2, description: 'قميص قطن صيفي بقصة عصرية', image: null, cost: 35, price: 75, quantity: 40, min_stock: 10, color: 'أزرق', size: 'M', material: 'قطن' },
-        { id: 6, name: 'بنطال جينز كلاسيك', sku: 'SKU-1006', category_id: 2, description: 'بنطال جينز بقصة مستقيمة', image: null, cost: 55, price: 120, quantity: 18, min_stock: 8, color: 'أزرق غامق', size: '32', material: 'دنيم' },
-        { id: 7, name: 'حذاء رياضي جري', sku: 'SKU-1007', category_id: 2, description: 'حذاء رياضي خفيف مخصص للجري', image: null, cost: 95, price: 189, quantity: 0, min_stock: 4, color: 'أبيض', size: '42', material: 'شبك' },
-        { id: 8, name: 'حقيبة ظهر مقاومة للماء', sku: 'SKU-1008', category_id: 5, description: 'حقيبة ظهر بجيب مخصص للابتوب', image: null, cost: 60, price: 119, quantity: 12, min_stock: 5, color: 'أسود', size: '', material: 'بوليستر' },
-        { id: 9, name: 'كوب حراري ستانلس', sku: 'SKU-1009', category_id: 4, description: 'كوب يحافظ على الحرارة 8 ساعات', image: null, cost: 22, price: 49, quantity: 55, min_stock: 15, color: 'فضي', size: '500 مل', material: 'ستانلس' },
-        { id: 10, name: 'طقم أواني تيفال 5 قطع', sku: 'SKU-1010', category_id: 4, description: 'طقم قدور تيفال بطبقة مانعة للالتصاق', image: null, cost: 220, price: 389, quantity: 6, min_stock: 3, color: '', size: '', material: 'ألومنيوم' },
-        { id: 11, name: 'زيت زيتون بكر 1 لتر', sku: 'SKU-1011', category_id: 3, description: 'زيت زيتون بكر ممتاز معصور على البارد', image: null, cost: 38, price: 65, quantity: 25, min_stock: 10, color: '', size: '1 لتر', material: '' },
-        { id: 12, name: 'عسل جبلي طبيعي', sku: 'SKU-1012', category_id: 3, description: 'عسل جبلي طبيعي 100% بدون إضافات', image: null, cost: 70, price: 130, quantity: 15, min_stock: 5, color: '', size: '500 جرام', material: '' },
-        { id: 13, name: 'دفتر ملاحظات جلد', sku: 'SKU-1013', category_id: 5, description: 'دفتر جلد بغلاف مطبوع و192 صفحة', image: null, cost: 12, price: 29, quantity: 60, min_stock: 20, color: 'بني', size: 'A5', material: 'جلد' }
+        { id: 1, name: 'شاحن سريع 20 واط', sku: 'SKU-1001', category_id: 1, description: 'شاحن Type-C بقوة 20 واط مع كابل مضفر', image: 'assets/images/products/gadgets.jpg', cost: 25, price: 45, quantity: 34, min_stock: 5, color: 'أبيض', size: '', material: '' },
+        { id: 2, name: 'سماعة بلوتوث Pro', sku: 'SKU-1002', category_id: 1, description: 'سماعة لاسلكية بعزل ضوضاء نشط', image: 'assets/images/products/electronics.jpg', cost: 85, price: 149, quantity: 4, min_stock: 5, color: 'أسود', size: '', material: '' },
+        { id: 3, name: 'ماوس لاسلكي', sku: 'SKU-1003', category_id: 1, description: 'ماوس صامت بثلاث سرعات وDPI عالي', image: 'assets/images/products/electronics.jpg', cost: 30, price: 59, quantity: 22, min_stock: 6, color: 'رمادي', size: '', material: '' },
+        { id: 4, name: 'لوحة مفاتيح ميكانيكية', sku: 'SKU-1004', category_id: 1, description: 'لوحة مفاتيح ميكانيكية بإضاءة RGB', image: 'assets/images/products/gadgets.jpg', cost: 140, price: 249, quantity: 8, min_stock: 3, color: 'أسود', size: '', material: '' },
+        { id: 5, name: 'قميص قطن رجالي', sku: 'SKU-1005', category_id: 2, description: 'قميص قطن صيفي بقصة عصرية', image: 'assets/images/products/fashion.jpg', cost: 35, price: 75, quantity: 40, min_stock: 10, color: 'أزرق', size: 'M', material: 'قطن' },
+        { id: 6, name: 'بنطال جينز كلاسيك', sku: 'SKU-1006', category_id: 2, description: 'بنطال جينز بقصة مستقيمة', image: 'assets/images/products/fashion.jpg', cost: 55, price: 120, quantity: 18, min_stock: 8, color: 'أزرق غامق', size: '32', material: 'دنيم' },
+        { id: 7, name: 'حذاء رياضي جري', sku: 'SKU-1007', category_id: 2, description: 'حذاء رياضي خفيف مخصص للجري', image: 'assets/images/products/fashion.jpg', cost: 95, price: 189, quantity: 0, min_stock: 4, color: 'أبيض', size: '42', material: 'شبك' },
+        { id: 8, name: 'حقيبة ظهر مقاومة للماء', sku: 'SKU-1008', category_id: 5, description: 'حقيبة ظهر بجيب مخصص للابتوب', image: 'assets/images/products/fashion.jpg', cost: 60, price: 119, quantity: 12, min_stock: 5, color: 'أسود', size: '', material: 'بوليستر' },
+        { id: 9, name: 'كوب حراري ستانلس', sku: 'SKU-1009', category_id: 4, description: 'كوب يحافظ على الحرارة 8 ساعات', image: 'assets/images/products/gadgets.jpg', cost: 22, price: 49, quantity: 55, min_stock: 15, color: 'فضي', size: '500 مل', material: 'ستانلس' },
+        { id: 10, name: 'طقم أواني تيفال 5 قطع', sku: 'SKU-1010', category_id: 4, description: 'طقم قدور تيفال بطبقة مانعة للالتصاق', image: 'assets/images/products/gadgets.jpg', cost: 220, price: 389, quantity: 6, min_stock: 3, color: '', size: '', material: 'ألومنيوم' },
+        { id: 11, name: 'زيت زيتون بكر 1 لتر', sku: 'SKU-1011', category_id: 3, description: 'زيت زيتون بكر ممتاز معصور على البارد', image: 'assets/images/products/food.jpg', cost: 38, price: 65, quantity: 25, min_stock: 10, color: '', size: '1 لتر', material: '' },
+        { id: 12, name: 'عسل جبلي طبيعي', sku: 'SKU-1012', category_id: 3, description: 'عسل جبلي طبيعي 100% بدون إضافات', image: 'assets/images/products/food.jpg', cost: 70, price: 130, quantity: 15, min_stock: 5, color: '', size: '500 جرام', material: '' },
+        { id: 13, name: 'دفتر ملاحظات جلد', sku: 'SKU-1013', category_id: 5, description: 'دفتر جلد بغلاف مطبوع و192 صفحة', image: 'assets/images/products/fashion.jpg', cost: 12, price: 29, quantity: 60, min_stock: 20, color: 'بني', size: 'A5', material: 'جلد' }
       ],
       customers: [
         { id: 1, name: 'أحمد محمد السالم', phone: '0551234567', email: 'ahmed@example.com', address: 'الرياض - حي الملقا', notes: 'عميل دائم' },

@@ -41,9 +41,9 @@ const Api = {
 
   /* ---------- إدارة وضع التشغيل (api | demo) ---------- */
 
-  /** الوضع المختار: auto (افتراضي) / live / demo */
+  /** الوضع المختار: demo (افتراضي للنسخة المجانية) / live / auto */
   mode() {
-    return localStorage.getItem('shopflow_api_mode') || 'auto';
+    return localStorage.getItem('shopflow_api_mode') || 'demo';
   },
 
   setMode(mode) {

@@ -43,6 +43,7 @@ const Api = {
 
   /** الوضع المختار: demo (افتراضي للنسخة المجانية) / live / auto */
   mode() {
+    if (window.location.hostname === 'shopflow-demo-beta.vercel.app') return 'demo';
     return localStorage.getItem('shopflow_api_mode') || 'demo';
   },
 
